@@ -2,7 +2,11 @@ export default interface TemplateProps {
   packageName: string;
   displayName: string;
   description: string;
-  repository: string;
+  repository: {
+    type: 'github';
+    user: string;
+    repository: string;
+  };
   version: string;
   keywords: string[];
   author: {

@@ -5,12 +5,12 @@ export interface Template<P extends Partial<DP>, DP extends object = {}> {
   defaultProps: DP;
 }
 
-export default function template<P extends object>(fn: (props: P) => string): Template<P, {}>;
-export default function template<P extends Partial<DP>, DP extends object>(
+function template<P extends object>(fn: (props: P) => string): Template<P, {}>;
+function template<P extends Partial<DP>, DP extends object>(
   fn: (props: P) => string,
   defaultProps: DP,
 ): Template<P, DP>;
-export default function template<P extends Partial<DP>, DP extends object = {}>(
+function template<P extends Partial<DP>, DP extends object = {}>(
   fn: (props: P) => string,
   defaultProps: DP = {} as DP,
 ) {
@@ -21,3 +21,5 @@ export default function template<P extends Partial<DP>, DP extends object = {}>(
   tmpl.defaultProps = defaultProps;
   return tmpl;
 }
+
+export default template;

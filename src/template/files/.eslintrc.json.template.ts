@@ -1,4 +1,4 @@
-import formatters from '../../utils/formatters';
+import * as formatters from '../../utils/formatters';
 import trimAndAddFinalNewline from '../../utils/trimAndAddFinalNewline';
 
 const eslintConfigTemplate = trimAndAddFinalNewline(
@@ -6,7 +6,7 @@ const eslintConfigTemplate = trimAndAddFinalNewline(
     plugins: ['@typescript-eslint', 'eslint-comments', 'mocha', 'promise', 'unicorn'],
     extends: [
       'eslint:recommended',
-      'airbnb-typescript/base',
+      'airbnb-typescript',
       'plugin:@typescript-eslint/recommended',
       'plugin:@typescript-eslint/recommended-requiring-type-checking',
       'plugin:eslint-comments/recommended',
@@ -17,6 +17,11 @@ const eslintConfigTemplate = trimAndAddFinalNewline(
       'prettier/react',
       'prettier/@typescript-eslint',
     ],
+    settings: {
+      react: {
+        version: 'latest',
+      },
+    },
     env: {
       node: true,
       browser: true,

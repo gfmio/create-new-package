@@ -1,3 +1,3 @@
-import main from "../cli/main";
+import main from '../cli/main';
 
 main();

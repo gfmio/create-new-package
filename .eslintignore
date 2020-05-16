@@ -1,0 +1,4 @@
+.github/**/*.md
+dist
+node_modules
+out

@@ -1,9 +1,12 @@
 import trimAndAddFinalNewline from '../../utils/trimAndAddFinalNewline';
-import formatters from '../../utils/formatters';
+import * as formatters from '../../utils/formatters';
 
-export interface SemanticReleaseConfigTemplateProps {}
+export interface SemanticReleaseConfigTemplateProps {
+  user: string;
+  repository: string;
+}
 
-export const semanticReleaseConfigTemplate = (props: SemanticReleaseConfigTemplateProps) =>
+export const semanticReleaseConfigTemplate = ({ user, repository }: SemanticReleaseConfigTemplateProps) =>
   trimAndAddFinalNewline(
     formatters.json({
       branch: 'master',
@@ -23,7 +26,7 @@ export const semanticReleaseConfigTemplate = (props: SemanticReleaseConfigTempla
           '@semantic-release/exec',
           {
             prepareCmd: 'yarn ts-pkg update-package-json -s dist/package.json -d package.json -f version',
-            // "successCmd": "yarn docs && yarn gh-pages -r \"https://$GITHUB_TOKEN@github.com/gfmio/example-calculator.git\""
+            successCmd: `yarn docs && yarn gh-pages -r "https://$GITHUB_TOKEN@github.com/${user}/${repository}.git"`,
           },
         ],
         '@semantic-release/git',

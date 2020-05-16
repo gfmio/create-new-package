@@ -1,5 +1,5 @@
 import trimAndAddFinalNewline from '../../../../utils/trimAndAddFinalNewline';
-import formatters from '../../../../utils/formatters';
+import * as formatters from '../../../../utils/formatters';
 
 /** Template for the GitHub issue template config `.github/ISSUE_TEMPLATE/config.yml` */
 const issueTemplateConfigYmlTemplate = (securityVulnerabilitiesEmailAddress: string, gpgKeyLink?: string) =>

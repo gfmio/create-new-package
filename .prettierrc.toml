@@ -1,8 +1,8 @@
-arrowParens = "avoid"
+arrowParens = "always"
 bracketSpacing = true
 insertPragma = false
 jsxBracketSameLine = false
-printWidth = 120
+printWidth = 80
 proseWrap = "always"
 quoteProps = "consistent"
 requirePragma = false
@@ -12,21 +12,21 @@ tabWidth = 2
 trailingComma = "all"
 
 [[overrides]]
-files = ["*.ts", "*.js"]
-[overrides.options]
-printWidth = 120
+files = [
+  "*.ts",
+  "*.tsx",
+  "*.js",
+  ".jsx",
+  "*.json",
+  "*.json5",
+  "*.jsonc"
+]
 
-[[overrides]]
-files = ["*.tsx", ".jsx"]
-[overrides.options]
-printWidth = 120
-
-[[overrides]]
-files = ["*.json", "*.json5"]
-[overrides.options]
-printWidth = 120
+  [overrides.options]
+  printWidth = 120
 
 [[overrides]]
 files = "*.md"
-[overrides.options]
-proseWrap = "never"
+
+  [overrides.options]
+  proseWrap = "never"

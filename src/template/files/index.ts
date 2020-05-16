@@ -47,3 +47,4 @@ export * from './codecov.yml.template';
 // Commitlint
 export * from './commitlint.config.js.template';
 export * from './.huskyrc.json.template';
+export * from './.lintstagedrc.template';

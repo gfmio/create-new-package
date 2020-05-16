@@ -1,3 +1,3 @@
 export default function trimAndAddFinalNewline(s: string) {
-  return s.trim() + '\n';
+  return `${s.trim()}\n`;
 }

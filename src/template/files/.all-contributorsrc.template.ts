@@ -1,4 +1,4 @@
-import formatters from '../../utils/formatters';
+import * as formatters from '../../utils/formatters';
 import trimAndAddFinalNewline from '../../utils/trimAndAddFinalNewline';
 
 export interface AllContributorsConfigTemplateProps {

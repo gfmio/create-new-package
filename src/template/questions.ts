@@ -1,7 +1,7 @@
 import { InputQuestion } from '../utils/questions';
-import enquirer from 'enquirer';
-import inquirer from 'inquirer';
-import { TemplateProps } from '.';
+// import enquirer from 'enquirer';
+// import inquirer from 'inquirer';
+import type TemplateProps from './TemplateProps';
 
 export const packageName = InputQuestion<string>({
   message: `What's the name of your package?`,
@@ -31,6 +31,7 @@ export const questions = [packageName, authorName, authorEmail, authorUrl];
 
 export const askQuestions = async (): Promise<TemplateProps> => {
   // const answers = (await enquirer.prompt<TemplateProps>(questions as any)) as {};
+  await new Promise(resolve => resolve());
   const answers = {};
   return {
     packageName: 'test-package',
@@ -39,7 +40,11 @@ export const askQuestions = async (): Promise<TemplateProps> => {
     keywords: [],
     license: 'mit',
     version: '0.0.0',
-    repository: 'gfmio/test-package',
+    repository: {
+      type: 'github',
+      user: 'gfmio',
+      repository: 'test-package',
+    },
     summary: 'test summary',
     features: {
       allContributors: true,

@@ -1,2 +1,3 @@
-export { default as main } from "./main";
-export { default as program, CommandLineOptions, action } from "./program";
+export { default as main } from './main';
+export type { CommandLineOptions } from './program';
+export { default as program, action } from './program';

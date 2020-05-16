@@ -1,4 +1,4 @@
-import formatters from '../../utils/formatters';
+import * as formatters from '../../utils/formatters';
 import trimAndAddFinalNewline from '../../utils/trimAndAddFinalNewline';
 
 export interface HuskyConfigTemplateProps {
@@ -7,7 +7,7 @@ export interface HuskyConfigTemplateProps {
 
 export const defaultHuskyConfigTemplateProps = {
   hooks: {
-    'pre-commit': 'pretty-quick --staged',
+    'pre-commit': 'lint-staged',
     'commit-msg': 'commitlint -E HUSKY_GIT_PARAMS',
     'prepare-commit-msg': 'exec < /dev/tty && git cz --hook || true',
   },

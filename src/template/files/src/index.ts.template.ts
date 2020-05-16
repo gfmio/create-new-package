@@ -6,7 +6,7 @@ const indexTsTemplate = (packageName: string) =>
  * Entrypoint of ${packageName}
  */
 
-export {};
+export default {};
 `);
 
 export default indexTsTemplate;
